@@ -29,25 +29,54 @@ projectData.initialize()
       res.render("home");
     });
 
-    
+    app.get("/about", (req, res) => {
+      res.render("about");
+    });
+
+    // Commented out old demo routes
+    // app.get("/solutions/projects/id-demo", (req, res) => {
+    //   projectData.getProjectById(9)
+    //     .then(p => res.json(p))
+    //     .catch(err => res.status(404).send(err));
+    // });
+
+    // app.get("/solutions/projects/sector-demo", (req, res) => {
+    //   projectData.getProjectsBySector("agriculture")
+    //     .then(list => res.json(list))
+    //     .catch(err => res.status(404).send(err));
+    // });
+
+    // Dynamic route for individual project
+    app.get("/solutions/projects/:id", (req, res) => {
+      projectData.getProjectById(req.params.id)
+        .then(project => res.render("project", {project: project}))
+        .catch(err => res.status(404).render("404", {message: err}));
+    });
+
+    // Dynamic route for projects list (with optional sector query parameter)
     app.get("/solutions/projects", (req, res) => {
-      projectData.getAllProjects()
-        .then(data => res.json(data))
-        .catch(err => res.status(500).send(err));
+      if(req.query.sector) {
+        // If sector query parameter exists
+        projectData.getProjectsBySector(req.query.sector)
+          .then(projects => {
+            if(projects.length > 0) {
+              res.render("projects", {projects: projects});
+            } else {
+              res.status(404).render("404", {message: `No projects found for sector: ${req.query.sector}`});
+            }
+          })
+          .catch(err => res.status(404).render("404", {message: err}));
+      } else {
+        // If no sector query parameter, show all projects
+        projectData.getAllProjects()
+          .then(projects => res.render("projects", {projects: projects}))
+          .catch(err => res.status(404).render("404", {message: err}));
+      }
     });
 
-    
-    app.get("/solutions/projects/id-demo", (req, res) => {
-      projectData.getProjectById(9)
-        .then(p => res.json(p))
-        .catch(err => res.status(404).send(err));
-    });
-
-    
-    app.get("/solutions/projects/sector-demo", (req, res) => {
-      projectData.getProjectsBySector("agriculture")
-        .then(list => res.json(list))
-        .catch(err => res.status(404).send(err));
+    // 404 catch-all route (must be last)
+    app.use((req, res) => {
+      res.status(404).render("404", {message: "I'm sorry, we're unable to find what you're looking for"});
     });
 
     app.listen(HTTP_PORT, () => {

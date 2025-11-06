@@ -2,27 +2,25 @@
   <div class="navbar-start">
     <a class="btn btn-ghost normal-case text-xl" href="/">Climate Solutions</a>
   </div>
-
-  <div class="navbar-center hidden lg:flex">
+  
+  <div class="navbar-end">
     <ul class="menu menu-horizontal px-1">
       <li><a href="/about">About</a></li>
-      <li tabindex="0">
-        <a>
-          Sector
-          <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-        </a>
-        <ul class="p-2 bg-base-100">
-          <li><a href="/solutions/projects?sector=agriculture">Agriculture</a></li>
-          <li><a href="/solutions/projects?sector=transportation">Transportation</a></li>
-          <li><a href="/solutions/projects?sector=energy">Energy</a></li>
-          <li><a href="/solutions/projects?sector=industry">Industry</a></li>
-          <li><a href="/solutions/projects?sector=waste">Waste</a></li>
-        </ul>
+      <li>
+        <details>
+          <summary>
+            Sector
+            <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </summary>
+          <ul class="p-2 bg-base-100 rounded-box z-[1]">
+            <li><a href="/solutions/projects?sector=Land Sinks">Land Sinks</a></li>
+            <li><a href="/solutions/projects?sector=Industry">Industry</a></li>
+            <li><a href="/solutions/projects?sector=Transportation">Transportation</a></li>
+            <li><a href="/solutions/projects?sector=Electricity">Electricity</a></li>
+            <li><a href="/solutions/projects?sector=Food, Agriculture, and Land Use">Food, Agriculture, and Land Use</a></li>
+          </ul>
+        </details>
       </li>
     </ul>
-  </div>
-
-  <div class="navbar-end">
-    <a class="btn" href="/solutions/projects">Projects</a>
   </div>
 </nav>
