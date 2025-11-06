@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="coffee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <div class="container mx-auto p-6">
+      <!-- Hero -->
+      <div class="hero bg-base-200 rounded-lg p-8 mb-6">
+        <div class="hero-content">
+          <div>
+            <h1 class="text-4xl font-bold">Climate Solutions</h1>
+            <p class="py-3">Explore projects that tackle climate challenges.</p>
+            <a href="/solutions/projects" class="btn btn-primary">View Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-card grid (hard-coded) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card card-compact bg-base-100 shadow">
+          <figure><img src="/images/project1.jpg" alt="Project 1"></figure>
+          <div class="card-body">
+            <h2 class="card-title">Project Title 1</h2>
+            <p>Short summary for project 1...</p>
+            <div class="card-actions justify-end">
+              <a href="/solutions/projects/1" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-compact bg-base-100 shadow">
+          <figure><img src="/images/project2.jpg" alt="Project 2"></figure>
+          <div class="card-body">
+            <h2 class="card-title">Project Title 2</h2>
+            <p>Short summary for project 2...</p>
+            <div class="card-actions justify-end">
+              <a href="/solutions/projects/2" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-compact bg-base-100 shadow">
+          <figure><img src="/images/project3.jpg" alt="Project 3"></figure>
+          <div class="card-body">
+            <h2 class="card-title">Project Title 3</h2>
+            <p>Short summary for project 3...</p>
+            <div class="card-actions justify-end">
+              <a href="/solutions/projects/3" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
