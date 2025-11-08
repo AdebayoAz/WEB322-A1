@@ -1,14 +1,16 @@
-/******************************************************************************** 
-*  WEB322 – Assignment 01 
-*  
-*  I declare that this assignment is my own work in accordance with Seneca's 
-*  Academic Integrity Policy: 
-*  
-*  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html 
-*  
-*  Name: ADEBAYO AZEEZ Student ID: 139260228 Date: 09/29/2025
-* 
-********************************************************************************/ 
+/********************************************************************************
+* WEB322 – Assignment 02
+*
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+*
+* https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
+*
+* Name: ADEBAYO AZEEZ Student ID: 139260228 Date: ______________
+*
+* Published URL: https://web-322-a1-coral.vercel.app/
+*
+********************************************************************************/
 
 
 const express = require("express");
