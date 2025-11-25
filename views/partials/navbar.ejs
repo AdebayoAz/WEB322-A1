@@ -18,9 +18,15 @@
             <li><a href="/solutions/projects?sector=Transportation">Transportation</a></li>
             <li><a href="/solutions/projects?sector=Electricity">Electricity</a></li>
             <li><a href="/solutions/projects?sector=Food, Agriculture, and Land Use">Food, Agriculture, and Land Use</a></li>
+            <li class="border-t border-gray-500 mt-2 pt-2"><a href="/solutions/projects">View All</a></li>
           </ul>
         </details>
       </li>
+      <% if (!session.user) { %>
+      <li><a href="/login">Log In</a></li>
+      <% } else { %>
+      <li><a href="/logout">Log Out (<%= session.user.userName %>)</a></li>
+      <% } %>
     </ul>
   </div>
 </nav>

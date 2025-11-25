@@ -22,6 +22,11 @@
               <a href="/solutions/projects?sector=Electricity" class="btn btn-sm btn-outline">Electricity</a>
               <a href="/solutions/projects?sector=Food, Agriculture, and Land Use" class="btn btn-sm btn-outline">Food, Agriculture, and Land Use</a>
             </p>
+            <% if (session.user) { %>
+            <div class="mt-4">
+              <a href="/solutions/addProject" class="btn btn-primary">Add Project</a>
+            </div>
+            <% } %>
           </div>
         </div>
       </div>
@@ -42,8 +47,8 @@
             <tr>
               <td><%= project.title %></td>
               <td>
-                <a href="/solutions/projects?sector=<%= encodeURIComponent(project.sector) %>" class="btn btn-sm btn-outline">
-                  <%= project.sector %>
+                <a href="/solutions/projects?sector=<%= encodeURIComponent(project.Sector.sector_name) %>" class="btn btn-sm btn-outline">
+                  <%= project.Sector.sector_name %>
                 </a>
               </td>
               <td><%= project.summary_short %></td>
